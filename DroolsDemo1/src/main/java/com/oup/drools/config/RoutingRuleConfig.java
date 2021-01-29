@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RoutingRuleConfig {
 
-	public static final String drlFile = "ROUTING_LOGIC_2.drl";
+	public static final String drlFile = "com/oup/drools/rules/ROUTING_LOGIC_2.drl";
 
 	@Bean("springManagedKieContainer")
 	public KieContainer kieContainer() {
