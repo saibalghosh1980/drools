@@ -1,0 +1,25 @@
+package com.oup.drools.rules;
+
+import com.oup.drools.bo.DroolsBO;
+import java.util.ArrayList;
+import com.oup.drools.bo.RouteFacts;
+
+
+
+dialect "mvel"
+
+rule "RULE_1"
+	when
+		droolsBO : DroolsBO(facts#RouteFacts.fact1.equals("1") && facts#RouteFacts.fact2.equals("A"))
+	then
+		droolsBO.setRouteName("1-A")
+		System.out.println("RULE_1")
+	end
+rule "RULE_2"
+	when
+		droolsBO : DroolsBO(facts#RouteFacts.fact1.equals("2") && facts#RouteFacts.fact2.equals("B"))
+	then
+		droolsBO.setRouteName("2-B")
+		System.out.println("RULE_2")	
+	
+	end
